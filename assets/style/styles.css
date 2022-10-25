@@ -1,0 +1,363 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Style */
+
+body {
+    font: 16px/28px arial, sans-serif;
+    background-image: url('../image/bg.png');
+    overflow-x: hidden;
+}
+
+.header {
+  border-bottom: 1px solid black;
+}
+
+nav .judul{
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 2px;
+}
+
+nav{
+  display: flex;
+  background-color: lightgreen;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+nav ul li a:hover{
+  color: black;
+}
+
+.container {
+  max-width: 90%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 50px auto;
+}
+
+.container h1{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.container article{
+  padding: 10px;
+  color: black;
+}
+
+.container #content{
+  flex:3;
+  background-color: lightgreen;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.container #content .slider {
+  padding: 20px;
+  margin: auto;
+}
+
+.container #content .img-box img{
+  margin-left:10px;
+  margin-right: 10px;
+  width: 270px;
+  height: 300px;
+  box-sizing: border-box;
+  border: 1px solid whitesmoke;
+
+}
+
+.btn{
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: black;
+  color: white;
+}
+
+.container .sidebar{
+  flex: 1;
+  background-color: lightgreen;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.container h2{
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container .identitas{
+  background-color: black;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.container .identitas p{
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+}
+
+.sidebar img{
+  margin-top: 10px;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+}
+ footer{
+   background-color: lightgreen;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   text-align: center;
+ }
+ 
+ footer h3{
+   color: black;
+   font-size: 16px;
+   font-weight: bold;
+ }
+ 
+/*hamburger menu */
+nav .menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+nav .menu-toggle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -10px;
+  top: -5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+nav .menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+nav .menu-toggle span:nth-child(2){
+  transform-origin: 0 0;
+}
+
+nav .menu-toggle span:nth-child(4){
+  transform-origin: 0 100%;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: black;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: black;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(3){
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* responsive breakpoint */
+
+/* tablet */
+@media screen and (max-width: 768px){
+  nav ul{
+    width: 50%;
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 576px){
+  nav .menu-toggle{
+    display: flex;
+  }
+  nav ul{
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lightgreen;
+    width: 40%;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav ul.slide{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width : 600px ) {
+.container {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 50px auto;
+  justify-content: space-between;
+}
+
+.container h1{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+.container article{
+  padding: 10px;
+  color: black;
+}
+
+.container #content{
+  flex:3;
+  background-color: lightgreen;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.container .sidebar{
+  flex:1;
+  background-color: lightgreen;
+  border-radius: 5px;
+}
+
+.container h2{
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container .identitas{
+  background-color: black;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.container .identitas p{
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+}
+
+.sidebar img{
+  margin-top: 10px;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.container #content .slider {
+  padding: 20px;
+  margin: auto;
+}
+
+.container #content .img-box img{
+  width: 850px;
+  height: 400px;
+  box-sizing: border-box;
+  border: 1px solid whitesmoke;
+
+}
+}
+
+
+
+
+    
